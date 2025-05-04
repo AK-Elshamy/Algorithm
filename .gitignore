@@ -1,0 +1,11 @@
+# Ignore node modules, logs, OS junk, and IDE configs
+node_modules/
+*.log
+*.tmp
+*.swp
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+.env
+
