@@ -10,7 +10,7 @@
 7. **Use Cases** 💡
 8. **Implementation in Python** 🐍
 9. **LeetCode Problems** 📚
-10. **Conclusion** 🎉
+10. **Inerview Problems** 🎉
 ---
 ## 1. What is Insertion Sort? 🎯
 
