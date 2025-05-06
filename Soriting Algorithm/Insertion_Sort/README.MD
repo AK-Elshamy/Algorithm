@@ -357,7 +357,11 @@ While this reduces the number of comparisons from O(n²) to O(n log n), the numb
 
 ## 💯 LeetCode Practice Questions
 
+Here are 8 LeetCode problems where you can practice using sorting algorithms like Insertion Sort. Try solving these problems on your own, and then check the LeetCode solutions to see various approaches:
+
 ### Question 1: [LC #75] Sort Colors
+**Problem Link**: [Sort Colors](https://leetcode.com/problems/sort-colors/)
+
 Given an array with n objects colored red, white, or blue (represented by 0, 1, and 2), sort them in-place so that objects of the same color are adjacent.
 
 **Example**:
@@ -366,21 +370,9 @@ Input: [2,0,2,1,1,0]
 Output: [0,0,1,1,2,2]
 ```
 
-**Solution using Insertion Sort**:
-```python
-def sortColors(nums):
-    # Use insertion sort
-    for i in range(1, len(nums)):
-        key = nums[i]
-        j = i - 1
-        
-        while j >= 0 and nums[j] > key:
-            nums[j + 1] = nums[j]
-            j -= 1
-        nums[j + 1] = key
-```
-
 ### Question 2: [LC #147] Insertion Sort List
+**Problem Link**: [Insertion Sort List](https://leetcode.com/problems/insertion-sort-list/)
+
 Sort a linked list using insertion sort.
 
 **Example**:
@@ -389,43 +381,9 @@ Input: 4->2->1->3
 Output: 1->2->3->4
 ```
 
-**Solution**:
-```python
-class ListNode:
-    def __init__(self, val=0, next=None):
-        self.val = val
-        self.next = next
-
-def insertionSortList(head):
-    if not head or not head.next:
-        return head
-    
-    dummy = ListNode(0)  # Create a dummy node to act as the sorted list head
-    curr = head  # Node to be inserted
-    
-    while curr:
-        # Save the next node to insert
-        next_node = curr.next
-        
-        # Find the position to insert current node
-        prev = dummy
-        temp = dummy.next
-        
-        while temp and temp.val < curr.val:
-            prev = temp
-            temp = temp.next
-        
-        # Insert the current node
-        curr.next = temp
-        prev.next = curr
-        
-        # Move to next node
-        curr = next_node
-    
-    return dummy.next
-```
-
 ### Question 3: [LC #280] Wiggle Sort
+**Problem Link**: [Wiggle Sort](https://leetcode.com/problems/wiggle-sort/) (Premium)
+
 Given an unsorted array nums, reorder it in-place such that nums[0] <= nums[1] >= nums[2] <= nums[3]....
 
 **Example**:
@@ -434,19 +392,9 @@ Input: [3,5,2,1,6,4]
 Output: [1,6,2,5,3,4] or any valid wiggle sort
 ```
 
-**Solution using modified insertion sort**:
-```python
-def wiggleSort(nums):
-    for i in range(1, len(nums)):
-        # If at odd index, should be greater than neighbors
-        if i % 2 == 1 and nums[i] < nums[i-1]:
-            nums[i], nums[i-1] = nums[i-1], nums[i]
-        # If at even index, should be less than neighbors
-        elif i % 2 == 0 and i > 0 and nums[i] > nums[i-1]:
-            nums[i], nums[i-1] = nums[i-1], nums[i]
-```
-
 ### Question 4: [LC #969] Pancake Sorting
+**Problem Link**: [Pancake Sorting](https://leetcode.com/problems/pancake-sorting/)
+
 Given an array A, we can perform a pancake flip: We choose some positive integer k <= A.length, then reverse the order of the first k elements of A. Return the k-values corresponding to a sequence of pancake flips that sort A.
 
 **Example**:
@@ -457,29 +405,9 @@ Explanation:
 We perform 5 pancake flips, with k values 3, 4, 2, 4, 1.
 ```
 
-**Solution using a variation of insertion sort**:
-```python
-def pancakeSort(arr):
-    result = []
-    n = len(arr)
-    
-    # Find the maximum element in arr[0...n-i-1] and move it to the end
-    for i in range(n):
-        max_idx = arr.index(max(arr[:n-i]))
-        
-        # If max element is not at the beginning, flip it to the beginning
-        if max_idx != 0:
-            result.append(max_idx + 1)
-            arr[:max_idx+1] = arr[:max_idx+1][::-1]
-        
-        # Now flip the max element to its final position
-        result.append(n - i)
-        arr[:n-i] = arr[:n-i][::-1]
-    
-    return result
-```
-
 ### Question 5: [LC #452] Minimum Number of Arrows to Burst Balloons
+**Problem Link**: [Minimum Number of Arrows to Burst Balloons](https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/)
+
 Find the minimum number of arrows that must be shot to burst all balloons. Each arrow can be shot at a point on the x-axis and bursts all balloons whose intervals contain that point.
 
 **Example**:
@@ -488,33 +416,9 @@ Input: [[10,16],[2,8],[1,6],[7,12]]
 Output: 2
 ```
 
-**Solution using insertion sort and greedy approach**:
-```python
-def findMinArrowShots(points):
-    if not points:
-        return 0
-    
-    # Sort points by end position using insertion sort
-    for i in range(1, len(points)):
-        key = points[i]
-        j = i - 1
-        while j >= 0 and points[j][1] > key[1]:
-            points[j + 1] = points[j]
-            j -= 1
-        points[j + 1] = key
-    
-    arrows = 1
-    end = points[0][1]
-    
-    for point in points[1:]:
-        if point[0] > end:
-            arrows += 1
-            end = point[1]
-    
-    return arrows
-```
-
 ### Question 6: [LC #922] Sort Array By Parity II
+**Problem Link**: [Sort Array By Parity II](https://leetcode.com/problems/sort-array-by-parity-ii/)
+
 Given an array A of non-negative integers, half of the integers in A are odd, and half of the integers are even. Sort the array so that A[0] is even, A[1] is odd, A[2] is even, and so on.
 
 **Example**:
@@ -523,25 +427,9 @@ Input: [4,2,5,7]
 Output: [4,5,2,7]
 ```
 
-**Solution using insertion sort variant**:
-```python
-def sortArrayByParityII(A):
-    result = [0] * len(A)
-    even_idx = 0
-    odd_idx = 1
-    
-    for num in A:
-        if num % 2 == 0:
-            result[even_idx] = num
-            even_idx += 2
-        else:
-            result[odd_idx] = num
-            odd_idx += 2
-    
-    return result
-```
-
 ### Question 7: [LC #242] Valid Anagram
+**Problem Link**: [Valid Anagram](https://leetcode.com/problems/valid-anagram/)
+
 Given two strings s and t, write a function to determine if t is an anagram of s.
 
 **Example**:
@@ -550,34 +438,9 @@ Input: s = "anagram", t = "nagaram"
 Output: true
 ```
 
-**Solution using sorting approach (insertion sort)**:
-```python
-def isAnagram(s, t):
-    if len(s) != len(t):
-        return False
-    
-    # Convert strings to lists for sorting
-    s_list = list(s)
-    t_list = list(t)
-    
-    # Sort both lists using insertion sort
-    def insertion_sort(arr):
-        for i in range(1, len(arr)):
-            key = arr[i]
-            j = i - 1
-            while j >= 0 and arr[j] > key:
-                arr[j + 1] = arr[j]
-                j -= 1
-            arr[j + 1] = key
-    
-    insertion_sort(s_list)
-    insertion_sort(t_list)
-    
-    # Compare sorted strings
-    return s_list == t_list
-```
-
 ### Question 8: [LC #1366] Rank Teams by Votes
+**Problem Link**: [Rank Teams by Votes](https://leetcode.com/problems/rank-teams-by-votes/)
+
 In a voting system, each voter gives a ranking of all teams from highest to lowest preference. The ordering of teams is decided by who received the most first-place votes. If two or more teams tie in the first-place votes, we consider the second-place votes and so on.
 
 **Example**:
@@ -586,34 +449,7 @@ Input: ["ABC","ACB","ABC","ACB","ACB"]
 Output: "ACB"
 ```
 
-**Solution using custom insertion sort**:
-```python
-def rankTeams(votes):
-    if len(votes) == 1:
-        return votes[0]
-    
-    # Count votes for each position
-    teams = {team: [0] * len(votes[0]) for team in votes[0]}
-    
-    for vote in votes:
-        for position, team in enumerate(vote):
-            teams[team][position] -= 1  # Negative because we want to sort in descending order
-    
-    # Convert to list of tuples (team, scores) for sorting
-    teams_list = [(team, scores + [team]) for team, scores in teams.items()]
-    
-    # Use insertion sort to sort based on scores and then team name
-    for i in range(1, len(teams_list)):
-        key = teams_list[i]
-        j = i - 1
-        while j >= 0 and teams_list[j][1] > key[1]:
-            teams_list[j + 1] = teams_list[j]
-            j -= 1
-        teams_list[j + 1] = key
-    
-    # Return the sorted teams as a string
-    return ''.join(team for team, _ in teams_list)
-```
+Try implementing these problems using insertion sort when appropriate and compare with other sorting algorithms to see the differences in approach and performance.
 
 ## 📊 When to Use Insertion Sort
 
