@@ -37,7 +37,4 @@ Each folder contains:
 
 Feel free to fork the repo and suggest improvements or add new algorithms!
 
----
-
-Let me know if you want a version focused only on one language, or if you'd like badges, GitHub Actions setup, or a table of contents.
 
