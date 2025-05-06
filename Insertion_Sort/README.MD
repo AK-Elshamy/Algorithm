@@ -1,5 +1,19 @@
 # 📚 Comprehensive Guide to Insertion Sort
 
+## Table of Contents
+- [What is Insertion Sort?](#-what-is-insertion-sort)
+- [How Insertion Sort Works: Incremental Thinking](#-how-insertion-sort-works-incremental-thinking)
+- [Implementation in Multiple Languages](#-implementation-in-multiple-languages)
+  - [C++](#c)
+  - [Java](#java)
+  - [Python](#python)
+- [Time and Space Complexity](#️-time-and-space-complexity)
+- [Key Properties of Insertion Sort](#-key-properties-of-insertion-sort)
+- [Major Company Interview Questions with Answers](#-major-company-interview-questions-with-answers)
+- [LeetCode Practice Questions](#-leetcode-practice-questions)
+- [When to Use Insertion Sort](#-when-to-use-insertion-sort)
+- [Summary](#-summary)
+
 ## 🔍 What is Insertion Sort?
 
 Insertion Sort is a simple sorting algorithm that builds the final sorted array one item at a time. It's much like sorting playing cards in your hand—you pick up one card at a time and insert it into its correct position relative to the cards you already have.
