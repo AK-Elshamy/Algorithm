@@ -359,98 +359,17 @@ While this reduces the number of comparisons from O(n²) to O(n log n), the numb
 
 Here are 8 LeetCode problems where you can practice using sorting algorithms like Insertion Sort. Try solving these problems on your own, and then check the LeetCode solutions to see various approaches:
 
-### Question 1: [LC #75] Sort Colors
-**Problem Link**: [Sort Colors](https://leetcode.com/problems/sort-colors/)
-
-Given an array with n objects colored red, white, or blue (represented by 0, 1, and 2), sort them in-place so that objects of the same color are adjacent.
-
-**Example**:
-```
-Input: [2,0,2,1,1,0]
-Output: [0,0,1,1,2,2]
-```
-
-### Question 2: [LC #147] Insertion Sort List
-**Problem Link**: [Insertion Sort List](https://leetcode.com/problems/insertion-sort-list/)
-
-Sort a linked list using insertion sort.
-
-**Example**:
-```
-Input: 4->2->1->3
-Output: 1->2->3->4
-```
-
-### Question 3: [LC #280] Wiggle Sort
-**Problem Link**: [Wiggle Sort](https://leetcode.com/problems/wiggle-sort/) (Premium)
-
-Given an unsorted array nums, reorder it in-place such that nums[0] <= nums[1] >= nums[2] <= nums[3]....
-
-**Example**:
-```
-Input: [3,5,2,1,6,4]
-Output: [1,6,2,5,3,4] or any valid wiggle sort
-```
-
-### Question 4: [LC #969] Pancake Sorting
-**Problem Link**: [Pancake Sorting](https://leetcode.com/problems/pancake-sorting/)
-
-Given an array A, we can perform a pancake flip: We choose some positive integer k <= A.length, then reverse the order of the first k elements of A. Return the k-values corresponding to a sequence of pancake flips that sort A.
-
-**Example**:
-```
-Input: [3,2,4,1]
-Output: [3,4,2,4,1]
-Explanation: 
-We perform 5 pancake flips, with k values 3, 4, 2, 4, 1.
-```
-
-### Question 5: [LC #452] Minimum Number of Arrows to Burst Balloons
-**Problem Link**: [Minimum Number of Arrows to Burst Balloons](https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/)
-
-Find the minimum number of arrows that must be shot to burst all balloons. Each arrow can be shot at a point on the x-axis and bursts all balloons whose intervals contain that point.
-
-**Example**:
-```
-Input: [[10,16],[2,8],[1,6],[7,12]]
-Output: 2
-```
-
-### Question 6: [LC #922] Sort Array By Parity II
-**Problem Link**: [Sort Array By Parity II](https://leetcode.com/problems/sort-array-by-parity-ii/)
-
-Given an array A of non-negative integers, half of the integers in A are odd, and half of the integers are even. Sort the array so that A[0] is even, A[1] is odd, A[2] is even, and so on.
-
-**Example**:
-```
-Input: [4,2,5,7]
-Output: [4,5,2,7]
-```
-
-### Question 7: [LC #242] Valid Anagram
-**Problem Link**: [Valid Anagram](https://leetcode.com/problems/valid-anagram/)
-
-Given two strings s and t, write a function to determine if t is an anagram of s.
-
-**Example**:
-```
-Input: s = "anagram", t = "nagaram"
-Output: true
-```
-
-### Question 8: [LC #1366] Rank Teams by Votes
-**Problem Link**: [Rank Teams by Votes](https://leetcode.com/problems/rank-teams-by-votes/)
-
-In a voting system, each voter gives a ranking of all teams from highest to lowest preference. The ordering of teams is decided by who received the most first-place votes. If two or more teams tie in the first-place votes, we consider the second-place votes and so on.
-
-**Example**:
-```
-Input: ["ABC","ACB","ABC","ACB","ACB"]
-Output: "ACB"
-```
+### Question 1: [Sort Colors](https://leetcode.com/problems/sort-colors/)
+### Question 2:[Insertion Sort List](https://leetcode.com/problems/insertion-sort-list/)
+### Question 3: [Wiggle Sort](https://leetcode.com/problems/wiggle-sort/) (Premium)
+### Question 4: [Pancake Sorting](https://leetcode.com/problems/pancake-sorting/)
+### Question 5: [Minimum Number of Arrows to Burst Balloons](https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/)
+### Question 6: [Sort Array By Parity II](https://leetcode.com/problems/sort-array-by-parity-ii/)
+### Question 7: [Valid Anagram](https://leetcode.com/problems/valid-anagram/)
+### Question 8: [Rank Teams by Votes](https://leetcode.com/problems/rank-teams-by-votes/)
 
 Try implementing these problems using insertion sort when appropriate and compare with other sorting algorithms to see the differences in approach and performance.
-
+---
 ## 📊 When to Use Insertion Sort
 
 - ✓ **Small data sets**: Efficient for arrays with fewer than 20 elements
